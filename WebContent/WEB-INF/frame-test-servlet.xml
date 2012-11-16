@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:jee="http://www.springframework.org/schema/jee" xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="
+			http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+			http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-2.5.xsd
+			http://www.springframework.org/schema/jee http://www.springframework.org/schema/jee/spring-jee-2.5.xsd">
+	
+	
+	<!-- 框架测试Action -->
+	<context:component-scan base-package="com.jvmer.frame.web.test.action" />
+	
+	<!-- 视图资源路径配置 -->
+	<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver" p:prefix="/WEB-INF/jsp/" p:suffix=".jsp" />
+	
+	<!-- 注解请求处理 -->
+	<bean class="com.jvmer.frame.web.servlet.mvc.MethodHandlerAdapter"/>
+	
+	<!-- 通过类注册URL -->
+	<bean class="com.jvmer.frame.web.servlet.mvc.DefaultClassHandlerMapping">
+		<property name="order" value="1" />
+	</bean>
+</beans>

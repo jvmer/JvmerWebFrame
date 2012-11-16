@@ -13,6 +13,10 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import com.jvmer.frame.web.servlet.mvc.Json;
 
+/**
+ * 设置Action的方法是否按规则生成
+ * @author jvmer
+ */
 @Controller
 @RequestMapping(value="/test/{name2}")
 public class Test {
